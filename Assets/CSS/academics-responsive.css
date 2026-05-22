@@ -1,0 +1,983 @@
+/* ================================================================
+   1. NAVBAR / HEADER
+   ================================================================ */
+
+@media (max-width: 479px) {
+  header .navbar .container-fluid {
+    height: auto;
+    padding: 10px 12px;
+  }
+  header .logo-img { width: 130px !important; }
+  .offcanvas.offcanvas-end { width: 100vw; max-width: 100%; }
+  .offcanvas .nav-link { font-size: 15px; padding: 11px 14px; }
+}
+@media (min-width: 480px) and (max-width: 575px) {
+  header .logo-img { width: 150px !important; }
+  header .navbar .container-fluid { height: auto; padding: 10px 16px; }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  header .logo-img { width: 170px !important; }
+  header .navbar .container-fluid { height: auto; padding: 12px 20px; }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  header .logo-img { width: 190px !important; }
+  header .navbar .container-fluid { height: auto; padding: 14px 20px; }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  header .logo-img { width: 190px !important; }
+  header .navbar-light .navbar-nav .nav-link { font-size: 13px; padding: 5px 12px; margin-right: 4px; }
+  header .icon-box { max-width: 240px; height: 56px; }
+  header .navbar .container-fluid { height: 80px; padding: 0 16px; }
+}
+@media (min-width: 1200px) and (max-width: 1399px) {
+  header .navbar-light .navbar-nav .nav-link { font-size: 15px; padding: 5px 18px; margin-right: 6px; }
+  header .icon-box { max-width: 280px; }
+  header .navbar .container-fluid { height: 90px; }
+}
+@media (min-width: 1400px) and (max-width: 1599px) {
+  header .navbar-light .navbar-nav .nav-link { font-size: 16px; }
+}
+@media (max-width: 1199px) {
+
+    /* ── BANNER */
+    .academics-banner h2 {
+        font-size: 58px;
+    }
+
+    /* ── ACADEMICS-1-NEW: overview cards padding */
+    .academics-1-new .section-2 .box .box-content {
+        padding: 14px;
+    }
+
+    /* ── CURRICULUM: tab buttons slightly smaller */
+    .academics-2 .section-tab .slide-buttons button {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+
+    /* ── CURRICULUM: limit image width so text column has room */
+    .academics-2 .section-tab .img-fluid {
+        width: 100%;
+        max-width: 420px;
+    }
+
+    /* ── KG SECTIONS: pill radius & padding */
+    .academics-8 .section-1 {
+        padding-top: 70px;
+        padding-bottom: 70px;
+        padding-right: 50px;
+    }
+    .academics-8 .section-1 .img-fluid img {
+        width: 400px;
+    }
+
+    .academics-9 .section-1.reverse-layout {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        padding-left: 50px;
+    }
+    .academics-9 .section-1 .img-fluid img {
+        width: 400px;
+    }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   TABLET LANDSCAPE  (769px – 991px)
+   ─────────────────────────────────────────────────────────────────────
+   Bootstrap md breakpoint fires; col-md-* kicks in for most grids.
+   Fix remaining fixed widths and hard-coded heights.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 991px) {
+
+    /* ── BANNER */
+    .academics-banner {
+        height: 210px;
+    }
+    .academics-banner h2 {
+        font-size: 48px;
+        line-height: 1.2;
+    }
+
+    /* ── ACADEMICS-1-NEW: 3 col → 1 col (HTML uses col-4, not col-md-4) */
+    .academics-1-new .section-2 .row > [class*="col-4"] {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* ── QUICK-LINK CIRCLES */
+    .academics-1 .box1,
+    .academics-1 .box2,
+    .academics-1 .box3 {
+        height: 200px;
+    }
+    .academics-1 .box1 h3,
+    .academics-1 .box2 h3,
+    .academics-1 .box3 h3 {
+        font-size: 20px;
+    }
+
+    /* ── CURRICULUM tab buttons: wrap onto 2 lines gracefully */
+    .academics-2 .section-tab .slide-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+    .academics-2 .section-tab .slide-buttons button {
+        margin: 0;
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    /* ── CURRICULUM sliders: col-5 / col-6 → stack vertically */
+    .academics-2 .section-tab .slider .row {
+        flex-direction: column;
+    }
+    .academics-2 .section-tab .slider .row > [class*="col-"] {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .academics-2 .section-tab .img-fluid {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* ── ASSESSMENT & LEARNING APPROACH: remove negative margins */
+    .academics-3 .left-side {
+        padding: 40px 30px;
+        margin-right: 0;
+    }
+    .academics-3 .right-side {
+        padding: 40px 30px;
+        margin-left: 0;
+    }
+
+    /* ── EVENTS: offset cols collapse, widen content */
+    .academics-5 .row > .col-2 {
+        display: none;
+    }
+    .academics-5 .row > .col-8 {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* ── HOUSE SYSTEM */
+    .academics-6 .sec-box {
+        margin-top: -60px;
+    }
+
+    /* ── EXTRA-CURRICULUM: two-col layout → stack */
+    .academics-7 .row > [class*="col-6"] {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .academics-7 .slide1-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .academics-7 .slide1-buttons button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    /* ── KG SECTIONS: remove pill shape for tablets */
+    .academics-8 .section-1 {
+        width: 100%;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        padding: 50px 30px;
+    }
+    .academics-8 .section-1 .img-fluid img {
+        width: 100%;
+        max-width: 380px;
+    }
+
+    .academics-9 .section-1.reverse-layout {
+        width: 100%;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        padding: 50px 30px;
+        margin-left: 0;
+    }
+    .academics-9 .section-1 .img-fluid img {
+        width: 100%;
+        max-width: 380px;
+    }
+
+    /* ── KG: col-6 → stack */
+    .academics-8 .section-1 .row > [class*="col-6"],
+    .academics-9 .section-1 .row > [class*="col-6"] {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .academics-8 .section-1 .img-fluid,
+    .academics-9 .section-1 .img-fluid {
+        text-align: center;
+        margin-bottom: 24px;
+        padding: 0;
+    }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   TABLET PORTRAIT  (≤ 768px)
+   ─────────────────────────────────────────────────────────────────────
+   Bootstrap stacks most grids to single column. Adjust type, spacing.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+    /* ── BANNER */
+    .academics-banner {
+        height: 180px;
+    }
+    .academics-banner h2 {
+        font-size: 38px;
+        line-height: 1.2;
+        padding: 0 16px;
+    }
+
+    /* ── OVERVIEW */
+    .academics-1-new h2 {
+        font-size: 28px;
+    }
+    .academics-1-new .desc-1,
+    .academics-1-new .desc-2 {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+    .academics-1-new .section-2 .row > [class*="col-4"] {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* ── QUICK-LINK CIRCLES */
+    .academics-1 .box1,
+    .academics-1 .box2,
+    .academics-1 .box3 {
+        height: 180px;
+    }
+    .academics-1 .box1 h3,
+    .academics-1 .box2 h3,
+    .academics-1 .box3 h3 {
+        font-size: 18px;
+    }
+
+    /* ── CURRICULUM heading */
+    .academics-2 h2 {
+        font-size: 26px;
+    }
+    .academics-2 .section-tab h3 {
+        font-size: 20px;
+    }
+
+    /* ── CURRICULUM slider cols → full width */
+    .academics-2 .section-tab .slider .row > [class*="col-6"],
+    .academics-2 .section-tab .slider .row > [class*="col-5"] {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .academics-2 .section-tab .img-fluid {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    /* ── ASSESSMENT & LEARNING APPROACH: stack panels */
+    .academics-3 .row > [class*="col-6"] {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .academics-3 .left-side {
+        padding: 40px 24px;
+        margin-right: 0;
+    }
+    .academics-3 .right-side {
+        padding: 40px 24px;
+        margin-left: 0;
+    }
+
+    /* ── STUDENT LIFE */
+    .academics-4 h2 {
+        font-size: 26px;
+    }
+    .academics-4 .desc {
+        font-size: 15px;
+    }
+    .hover-content {
+        padding: 20px;
+    }
+    .card-title-bottom {
+        padding: 18px 20px;
+    }
+
+    /* ── EVENTS */
+    .academics-5 h2 {
+        font-size: 26px;
+    }
+    .academics-5 .row .box .row {
+        flex-direction: column;
+    }
+    .academics-5 .row .box .row > [class*="col-5"],
+    .academics-5 .row .box .row > [class*="col-7"] {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .academics-5 .row .box .col-5 img,
+    .academics-5 .row .box .col-5 .img-fluid {
+        width: 100%;
+        border-radius: 12px;
+        margin-bottom: 16px;
+    }
+
+    /* ── HOUSE SYSTEM */
+    .academics-6 h2 {
+        font-size: 26px;
+    }
+    .academics-6 .header-section {
+        padding-bottom: 100px;
+    }
+    .academics-6 .sec-box {
+        padding: 20px 16px;
+        margin-top: -50px;
+    }
+    .academics-6 .sec-box .row > [class*="col-6"] {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .academics-6 .sec-box .sub-box.b2,
+    .academics-6 .sec-box .sub-box.b3 {
+        border-left: none;
+        border-right: none;
+        border-top: 1px solid #dddddda3;
+        border-bottom: none;
+    }
+
+    /* ── EXTRA-CURRICULUM */
+    .academics-7 h2 {
+        font-size: 26px;
+    }
+    .academics-7 .desc {
+        font-size: 15px;
+    }
+    .academics-7 .row > [class*="col-6"] {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .academics-7 .slide1-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 24px;
+    }
+    .academics-7 .slide1-buttons button {
+        font-size: 15px;
+        padding: 8px 14px;
+    }
+
+    /* ── KG SECTIONS */
+    .academics-8 h2 {
+        font-size: 26px;
+    }
+    .academics-8 .section-1 {
+        width: 100%;
+        border-top-right-radius: 16px;
+        border-bottom-right-radius: 16px;
+        padding: 40px 20px;
+    }
+    .academics-8 .section-1 .img-fluid img {
+        width: 100%;
+        max-width: 340px;
+    }
+    .academics-8 .section-1 .row > [class*="col-6"] {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .academics-8 .section-1 .img-fluid {
+        text-align: center;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .academics-9 .section-1.reverse-layout {
+        width: 100%;
+        border-top-left-radius: 16px;
+        border-bottom-left-radius: 16px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        padding: 40px 20px;
+        margin-left: 0;
+    }
+    .academics-9 .section-1 .img-fluid img {
+        width: 100%;
+        max-width: 340px;
+    }
+    .academics-9 .section-1 .row > [class*="col-6"] {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .academics-9 .section-1 .img-fluid {
+        text-align: center;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+    /* undo reverse row on mobile so image appears first */
+    .academics-9 .section-1 .row.flex-row-reverse {
+        flex-direction: column !important;
+    }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   MOBILE  (≤ 575px)
+   ─────────────────────────────────────────────────────────────────────
+   Single column. All fixed widths removed. Typography scaled for phone.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 575px) {
+
+    /* ── BANNER */
+    .academics-banner {
+        height: 160px;
+    }
+    .academics-banner h2 {
+        font-size: 30px;
+        line-height: 1.15;
+        padding: 0 16px;
+    }
+
+    /* ── OVERVIEW */
+    .academics-1-new h2 {
+        font-size: 24px;
+    }
+    .academics-1-new .desc-1,
+    .academics-1-new .desc-2 {
+        font-size: 14px;
+    }
+    .academics-1-new .section-2 .box .box-content {
+        padding: 12px;
+    }
+    .academics-1-new .section-2 .box .box-content .box-title {
+        font-size: 16px;
+    }
+    .academics-1-new .section-2 .box .box-content p,
+    .academics-1-new .section-2 .box .box-content .box-list li {
+        font-size: 14px;
+    }
+
+    /* ── QUICK-LINK CIRCLES */
+    .academics-1 .box1,
+    .academics-1 .box2,
+    .academics-1 .box3 {
+        height: 150px;
+        border-radius: 16px;
+    }
+    .academics-1 .box1 h3,
+    .academics-1 .box2 h3,
+    .academics-1 .box3 h3 {
+        font-size: 17px;
+    }
+
+    /* ── CURRICULUM */
+    .academics-2 h2 {
+        font-size: 22px;
+    }
+    .academics-2 .section-tab h3 {
+        font-size: 18px;
+    }
+    .academics-2 .section-tab .slide-buttons button {
+        font-size: 12px;
+        padding: 7px 10px;
+        border-radius: 14px;
+        width: 100%;
+    }
+    .academics-2 .section-tab .slider {
+        padding: 16px;
+    }
+    .academics-2 .section-tab [id^="slide-"] .col-6 .list li {
+        font-size: 14px;
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+
+    /* ── ASSESSMENT & LEARNING APPROACH */
+    .academics-3 .left-side,
+    .academics-3 .right-side {
+        padding: 32px 18px;
+    }
+    .academics-3 h3 {
+        font-size: 20px;
+    }
+    .academics-3 p {
+        font-size: 14px;
+    }
+    .academics-3 .left-side .left-list li,
+    .academics-3 .right-side .right-list li {
+        font-size: 14px;
+    }
+
+    /* ── STUDENT LIFE */
+    .academics-4 h2 {
+        font-size: 22px;
+    }
+    .academics-4 .desc {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+    .hover-content {
+        padding: 16px;
+    }
+    .hover-content h3 {
+        font-size: 18px;
+    }
+    .hover-content p {
+        font-size: 13px;
+    }
+    .card-title-bottom {
+        padding: 14px 16px;
+        width: 90%;
+    }
+    .card-title-bottom h3 {
+        font-size: 16px;
+    }
+    .card-img{
+        height: 300px;
+    }
+
+    /* ── EVENTS */
+    .academics-5 h2 {
+        font-size: 22px;
+    }
+    .academics-5 .row .box {
+        padding: 18px;
+    }
+    .academics-5 .row .box h3 {
+        font-size: 18px;
+        margin-top: 12px;
+    }
+    .academics-5 .row .box .box-desc {
+        font-size: 14px;
+    }
+    .academics-5 .row .box .box-list {
+        font-size: 14px;
+    }
+
+    /* ── HOUSE SYSTEM */
+    .academics-6 h2 {
+        font-size: 22px;
+    }
+    .academics-6 .header-section {
+        padding-top: 30px;
+        padding-bottom: 80px;
+    }
+    .academics-6 .header-section .desc {
+        font-size: 14px;
+    }
+    .academics-6 .sec-box {
+        margin-top: -40px;
+        padding: 16px 12px;
+    }
+    .academics-6 .sec-box .sub-box h3 {
+        font-size: 18px;
+    }
+    .academics-6 .sec-box .sub-box .desc {
+        font-size: 14px;
+    }
+
+    /* ── EXTRA-CURRICULUM */
+    .academics-7 h2 {
+        font-size: 22px;
+    }
+    .academics-7 .desc {
+        font-size: 14px;
+    }
+    .academics-7 .slide1-buttons button {
+        font-size: 14px;
+        padding: 7px 12px;
+        width: 100%;
+    }
+    .academics-7 .box .section-title {
+        font-size: 18px;
+    }
+    .academics-7 .box .desc {
+        font-size: 14px;
+    }
+    .academics-7 .box .box-list li {
+        font-size: 14px;
+    }
+
+    /* ── KG SECTIONS */
+    .academics-8 h2 {
+        font-size: 22px;
+        padding-left: 16px;
+    }
+    .academics-8 .section-1 {
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+        padding: 30px 16px;
+    }
+    .academics-8 .section-1 .img-fluid img {
+        max-width: 260px;
+    }
+    .academics-8 .section-1 .section-desc {
+        font-size: 20px;
+    }
+    .academics-8 .section-1 .section-desc1,
+    .academics-8 .section-1 .section-desc2 {
+        font-size: 14px;
+    }
+
+    .academics-9 .section-1.reverse-layout {
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        padding: 30px 16px;
+    }
+    .academics-9 .section-1 .img-fluid img {
+        max-width: 260px;
+    }
+    .academics-9 .section-1 .section-desc {
+        font-size: 20px;
+    }
+    .academics-9 .section-1 .section-desc1,
+    .academics-9 .section-1 .section-desc2 {
+        font-size: 14px;
+    }
+    .academics-9 .section-1 .section-list li {
+        font-size: 14px;
+    }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   TINY PHONES  (≤ 360px)
+   ─────────────────────────────────────────────────────────────────────
+   Safety net for very small handsets. Only override what still overflows.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 360px) {
+
+    .academics-banner {
+        height: 140px;
+    }
+    .academics-banner h2 {
+        font-size: 24px;
+    }
+
+    .academics-1-new h2,
+    .academics-2 h2,
+    .academics-4 h2,
+    .academics-5 h2,
+    .academics-6 h2,
+    .academics-7 h2,
+    .academics-8 h2 {
+        font-size: 20px;
+    }
+
+    .academics-1 .box1,
+    .academics-1 .box2,
+    .academics-1 .box3 {
+        height: 130px;
+    }
+    .academics-1 .box1 h3,
+    .academics-1 .box2 h3,
+    .academics-1 .box3 h3 {
+        font-size: 15px;
+    }
+
+    .academics-2 .section-tab .slide-buttons button {
+        font-size: 11px;
+        padding: 6px 8px;
+    }
+    .academics-2 .section-tab h3 {
+        font-size: 16px;
+    }
+
+    .academics-6 .sec-box {
+        margin-top: -30px;
+    }
+
+    .academics-8 .section-1 .img-fluid img,
+    .academics-9 .section-1 .img-fluid img {
+        max-width: 220px;
+    }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   DESKTOP MINIMUM  (≥ 1200px)
+   ─────────────────────────────────────────────────────────────────────
+   style.css already handles desktop perfectly. Intentionally empty.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* @media (min-width: 1200px) { } */
+
+/* ================================================================
+   10. FOOTER — All breakpoints
+   ================================================================ */
+
+/* xs ≤ 479px */
+@media (max-width: 479px) {
+  footer .footer-col-1,
+  footer .footer-col-2,
+  footer .footer-col-3 {
+    width: 100% !important; max-width: 100% !important; flex: 0 0 100% !important;
+    margin-bottom: 24px; padding-right: 0 !important; padding-left: 0 !important;
+    border-right: none !important;
+  }
+  .footer-logo { width: 140px; max-width: 140px; }
+  .social-icons a { width: 34px; height: 34px; font-size: 15px; }
+}
+
+/* sm 480–575px */
+@media (min-width: 480px) and (max-width: 575px) {
+  footer .footer-col-1,
+  footer .footer-col-2,
+  footer .footer-col-3 {
+    width: 100% !important; max-width: 100% !important; flex: 0 0 100% !important;
+    margin-bottom: 20px; padding-right: 0 !important; padding-left: 0 !important;
+    border-right: none !important;
+  }
+  .footer-logo { width: 150px; max-width: 150px; }
+}
+
+/* md 576–767px */
+@media (min-width: 576px) and (max-width: 767px) {
+  footer .footer-col-1 {
+    width: 100% !important; max-width: 100% !important; flex: 0 0 100% !important;
+    padding-right: 0 !important; border-right: none !important; margin-bottom: 20px;
+  }
+  footer .footer-col-2 {
+    width: 50% !important; max-width: 50% !important; flex: 0 0 50% !important;
+    padding-left: 0 !important;
+  }
+  footer .footer-col-3 {
+    width: 50% !important; max-width: 50% !important; flex: 0 0 50% !important;
+  }
+  .footer-logo { width: 160px; max-width: 160px; }
+}
+
+/* lg tablet 768–991px */
+@media (min-width: 768px) and (max-width: 991px) {
+  footer .footer-col-1 {
+    width: 100% !important; max-width: 100% !important; flex: 0 0 100% !important;
+    padding-right: 0 !important; border-right: none !important; margin-bottom: 20px;
+  }
+  footer .footer-col-2 {
+    width: 50% !important; max-width: 50% !important; flex: 0 0 50% !important;
+    padding-left: 16px !important;
+  }
+  footer .footer-col-3 {
+    width: 48% !important; max-width: 48% !important; flex: 0 0 48% !important;
+  }
+  .footer-logo { width: 170px; max-width: 170px; }
+}
+
+/* xl 992–1199px */
+@media (min-width: 992px) and (max-width: 1199px) {
+  footer .footer-col-1 {
+    width: 38% !important; max-width: 38% !important; flex: 0 0 38% !important;
+    padding-right: 20px !important; border-right: 1px solid #dddddd61 !important;
+  }
+  footer .footer-col-2 {
+    width: 32% !important; max-width: 32% !important; flex: 0 0 32% !important;
+    padding-left: 20px !important;
+  }
+  footer .footer-col-3 {
+    width: 28% !important; max-width: 28% !important; flex: 0 0 28% !important;
+    padding-left: 10px !important;
+  }
+  .footer-logo { width: 155px; max-width: 155px; }
+  footer .footer-bt p { font-size: 14px; }
+  footer .enq a, footer a { font-size: 15px; }
+  footer p { font-size: 14px; }
+  footer .footer-links a { font-size: 15px; }
+}
+
+/* xxl 1200–1399px */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  footer .footer-col-1 { padding-right: 40px !important; }
+  footer .footer-col-2 { padding-left: 30px !important; }
+  .footer-logo { width: 175px; max-width: 175px; }
+}
+
+/* 125% zoom — viewport ~860–1010px */
+@media (min-width: 860px) and (max-width: 1010px) {
+  footer.footer-section .container .row { flex-wrap: wrap !important; }
+  footer .footer-col-1 {
+    width: 100% !important; max-width: 100% !important; flex: 0 0 100% !important;
+    padding-right: 0 !important; border-right: none !important;
+    border-bottom: 1px solid #dddddd61; padding-bottom: 20px !important; margin-bottom: 20px !important;
+  }
+  footer .footer-col-2 {
+    width: 50% !important; max-width: 50% !important; flex: 0 0 50% !important;
+    padding-left: 0 !important;
+  }
+  footer .footer-col-3 {
+    width: 50% !important; max-width: 50% !important; flex: 0 0 50% !important;
+    padding-left: 20px !important;
+  }
+  .footer-logo { width: 155px; max-width: 155px; }
+  footer .footer-links a { font-size: 15px; }
+  footer .enq a, footer a { font-size: 15px; }
+  footer p { font-size: 14px; }
+}
+
+
+/* ================================================================
+   11. CAROUSEL CONTROLS
+   ================================================================ */
+
+@media (max-width: 575px) {
+  .carousel-control-prev, .carousel-control-next {
+    width: 32px; height: 32px; top: 50%; transform: translateY(-50%);
+  }
+  .carousel-control-next-icon, .carousel-control-prev-icon {
+    width: 1rem; height: 1rem;
+  }
+}
+
+
+/* ================================================================
+   12. SCROLL-TOP & WHATSAPP
+   ================================================================ */
+
+@media (max-width: 479px) {
+  #scrollTopBtn { width: 36px; height: 36px; font-size: 14px; bottom: 70px; right: 12px; }
+  .whatsapp-float { width: 44px; height: 44px; font-size: 22px; bottom: 18px; right: 12px; }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  #scrollTopBtn { width: 38px; height: 38px; font-size: 15px; bottom: 72px; right: 14px; }
+  .whatsapp-float { width: 46px; height: 46px; font-size: 24px; bottom: 18px; right: 14px; }
+}
+
+
+/* ================================================================
+   13. 110% ZOOM — COMPREHENSIVE FIX
+   ================================================================
+   At 110% browser zoom, the viewport shrinks to ~1050–1280px.
+   Root problem:
+     - Bootstrap .container has a max-width (e.g. 1140px at ≥1200px,
+       960px at ≥992px). At 110% the container is narrower.
+     - footer-col-1 has padding-right: 70px in style.css. This is
+       way too large for the compressed viewport.
+     - footer-bt is a SEPARATE .container div outside the inner
+       .container, so Bootstrap may compute a different max-width
+       for it vs the columns container — this is what causes the
+       copyright bar to appear misaligned (wider or narrower).
+   Solution:
+     - Override col widths with explicit flex values that sum to 100%
+     - Kill the oversized padding-right on col-1
+     - Force footer-bt.container to match the inner container exactly
+       by setting the same max-width Bootstrap uses at that viewport
+*/
+
+/* 110% on 1280px screen → ~1163px viewport */
+@media (min-width: 1050px) and (max-width: 1199px) {
+  footer .footer-col-1 {
+    width: 40% !important;
+    max-width: 40% !important;
+    flex: 0 0 40% !important;
+    padding-right: 24px !important;
+    border-right: 1px solid #dddddd61 !important;
+  }
+  footer .footer-col-2 {
+    width: 32% !important;
+    max-width: 32% !important;
+    flex: 0 0 32% !important;
+    padding-left: 24px !important;
+  }
+  footer .footer-col-3 {
+    width: 28% !important;
+    max-width: 28% !important;
+    flex: 0 0 28% !important;
+    padding-left: 12px !important;
+  }
+  .footer-logo { width: 150px; max-width: 150px; }
+  footer .footer-links a { font-size: 14px; }
+  footer .enq a, footer a { font-size: 14px; }
+  footer p { font-size: 13px; }
+  footer h5 { font-size: 15px; }
+}
+
+/* 110% on 1366px screen → ~1242px viewport */
+@media (min-width: 1200px) and (max-width: 1310px) {
+  footer .footer-col-1 {
+    width: 40% !important;
+    max-width: 40% !important;
+    flex: 0 0 40% !important;
+    padding-right: 26px !important;
+    border-right: 1px solid #dddddd61 !important;
+  }
+  footer .footer-col-2 {
+    width: 32% !important;
+    max-width: 32% !important;
+    flex: 0 0 32% !important;
+    padding-left: 26px !important;
+  }
+  footer .footer-col-3 {
+    width: 28% !important;
+    max-width: 28% !important;
+    flex: 0 0 28% !important;
+    padding-left: 14px !important;
+  }
+  .footer-logo { width: 160px; max-width: 160px; }
+  footer .footer-links a { font-size: 15px; }
+  footer .enq a, footer a { font-size: 15px; }
+  footer p { font-size: 14px; }
+}
+
+/* 110% on 1920px screen → ~1745px viewport — no layout issue but reduce huge padding */
+@media (min-width: 1600px) {
+  footer .footer-col-1 {
+    padding-right: 60px !important;
+  }
+}
+
+
+/* ================================================================
+   14. FOOTER-BT STRUCTURAL FIX
+   footer-bt is now inside .container — remove any leftover
+   .container class overrides and ensure it stays full-width
+   within its parent container at every zoom level.
+   ================================================================ */
+footer .footer-bt {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  text-align: center !important;
+}
+
+@media (max-width: 1200px) {
+    .academics-8 .section-1,
+    .academics-9 .section-1.reverse-layout{
+        border-radius: 20px;
+        padding: 50px 30px;
+    }
+
+    .academics-8 .section-1 .row > div,
+    .academics-9 .section-1 .row > div{
+        text-align: center;
+    }
+}

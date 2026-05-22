@@ -1,0 +1,599 @@
+/* ================================================================
+   1. NAVBAR / HEADER
+   ================================================================ */
+
+@media (max-width: 479px) {
+  header .navbar .container-fluid {
+    height: auto;
+    padding: 10px 12px;
+  }
+  header .logo-img { width: 130px !important; }
+  .offcanvas.offcanvas-end { width: 100vw; max-width: 100%; }
+  .offcanvas .nav-link { font-size: 15px; padding: 11px 14px; }
+}
+@media (min-width: 480px) and (max-width: 575px) {
+  header .logo-img { width: 150px !important; }
+  header .navbar .container-fluid { height: auto; padding: 10px 16px; }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  header .logo-img { width: 170px !important; }
+  header .navbar .container-fluid { height: auto; padding: 12px 20px; }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  header .logo-img { width: 190px !important; }
+  header .navbar .container-fluid { height: auto; padding: 14px 20px; }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  header .logo-img { width: 190px !important; }
+  header .navbar-light .navbar-nav .nav-link { font-size: 13px; padding: 5px 12px; margin-right: 4px; }
+  header .icon-box { max-width: 240px; height: 56px; }
+  header .navbar .container-fluid { height: 80px; padding: 0 16px; }
+}
+@media (min-width: 1200px) and (max-width: 1399px) {
+  header .navbar-light .navbar-nav .nav-link { font-size: 15px; padding: 5px 18px; margin-right: 6px; }
+  header .icon-box { max-width: 280px; }
+  header .navbar .container-fluid { height: 90px; }
+}
+@media (min-width: 1400px) and (max-width: 1599px) {
+  header .navbar-light .navbar-nav .nav-link { font-size: 16px; }
+}
+/*
+ * Problem: .facility-banner h2 is fixed at 70px — unreadable on phones.
+ * Fix: fluid scale.
+ *   xs  ≤420px  → 32px
+ *   sm  ≤768px  → 44px
+ *   lg  ≥1024px → 70px (original)
+ */
+
+/* Medium phones / tablets */
+@media (max-width: 768px) {
+    .facility-banner {
+        height: 200px;
+    }
+
+    .facility-banner h2 {
+        font-size: 44px;
+        line-height: 56px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 420px) {
+    .facility-banner {
+        height: 160px;
+        padding: 0 16px;
+    }
+
+    .facility-banner h2 {
+        font-size: 32px;
+        line-height: 42px;
+    }
+}
+
+/* Desktop: restore */
+@media (min-width: 1024px) {
+    .facility-banner {
+        height: 250px;
+    }
+
+    .facility-banner h2 {
+        font-size: 70px;
+        line-height: 1.2;
+    }
+}
+
+
+/* ============================================================
+   4 — FACILITY-1 (INTRO PARAGRAPH)
+   ============================================================ */
+
+/*
+ * Problem: text has no side breathing room on very narrow screens.
+ * Fix: add horizontal padding and reduce font-size on xs.
+ */
+
+@media (max-width: 768px) {
+    .facility-1 .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .facility-1 p {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+}
+
+@media (max-width: 420px) {
+    .facility-1 {
+        padding-top: 28px !important;
+        padding-bottom: 28px !important;
+    }
+
+    .facility-1 p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+}
+
+
+/* ============================================================
+   5 — FACILITY-2 (FAC-BOX CARD GRID)
+   ============================================================ */
+
+/*
+ * Problem: Two-column (col-lg-6) cards use a fixed inner image column
+ *          (col-4) with no minimum height — images become tiny and text
+ *          overflows on small screens.
+ *
+ * Fixes applied across breakpoints:
+ *   - Ensure each fac-box fills its column with consistent margin.
+ *   - On sm/xs: the Bootstrap col-12 already stacks cards; we only
+ *     adjust internal layout so the image column stays proportional.
+ *   - Guarantee the image fills the card corner radius properly.
+ *   - Add bottom gap between stacked cards.
+ */
+
+/* --- Medium (421–768px): cards are full-width, 2-col inner layout --- */
+@media (max-width: 768px) {
+    .facility-2 {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    /* Row gap between card pairs */
+    .facility-2 .row.align-item-center {
+        row-gap: 16px;
+    }
+
+    /* Full-width card columns stacked */
+    .facility-2 .col-lg-6 {
+        margin-bottom: 16px;
+    }
+
+    /* fac-box1 */
+    .facility-2 .fac-box1 {
+        border-radius: 16px;
+        overflow: hidden;
+        display: flex;
+        align-items: stretch;
+        min-height: 100px;
+    }
+
+    /* fac-box2 */
+    .facility-2 .fac-box2 {
+        border-radius: 16px;
+        overflow: hidden;
+        display: flex;
+        align-items: stretch;
+        min-height: 100px;
+    }
+
+    /* Inner row inside each fac-box */
+    .facility-2 .fac-box1 > .row,
+    .facility-2 .fac-box2 > .row {
+        margin: 0;
+        width: 100%;
+        flex-wrap: nowrap;
+        align-items: stretch;
+    }
+
+    /* Image column: fixed width keeps the image from squishing */
+    .facility-2 .fac-box1 > .row > .img,
+    .facility-2 .fac-box2 > .row > .img {
+        padding: 0;
+        flex: 0 0 120px;
+        max-width: 120px;
+    }
+
+    .facility-2 .fac-box1 > .row > .img .img-fluid,
+    .facility-2 .fac-box2 > .row > .img .img-fluid {
+        width: 120px;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0;
+        border-top-left-radius: 16px;
+        border-bottom-left-radius: 16px;
+        display: block;
+    }
+
+    /* Content column */
+    .facility-2 .fac-box1 > .row > .content,
+    .facility-2 .fac-box2 > .row > .content {
+        padding: 14px 14px 14px 12px;
+        flex: 1;
+    }
+
+    .facility-2 .fac-box1 .content h5,
+    .facility-2 .fac-box2 .content h5 {
+        font-size: 16px;
+        letter-spacing: 0.8px;
+    }
+
+    .facility-2 .fac-box1 .content p,
+    .facility-2 .fac-box2 .content p {
+        font-size: 13.5px;
+        line-height: 1.55;
+        margin-bottom: 0;
+    }
+}
+
+/* --- Small phones (≤420px): compact single-column card layout --- */
+@media (max-width: 420px) {
+    .facility-2 {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .facility-2 .row.align-item-center {
+        row-gap: 12px;
+    }
+
+    .facility-2 .col-lg-6 {
+        margin-bottom: 12px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Reduce image column further on very small screens */
+    .facility-2 .fac-box1 > .row > .img,
+    .facility-2 .fac-box2 > .row > .img {
+        flex: 0 0 90px;
+        max-width: 90px;
+    }
+
+    .facility-2 .fac-box1 > .row > .img .img-fluid,
+    .facility-2 .fac-box2 > .row > .img .img-fluid {
+        width: 90px;
+    }
+
+    /* Content text adjustments */
+    .facility-2 .fac-box1 .content,
+    .facility-2 .fac-box2 .content {
+        padding: 10px 10px 10px 8px;
+        padding-top: 10px !important;
+    }
+
+    .facility-2 .fac-box1 .content h5,
+    .facility-2 .fac-box2 .content h5 {
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        margin-bottom: 6px;
+    }
+
+    .facility-2 .fac-box1 .content p,
+    .facility-2 .fac-box2 .content p {
+        font-size: 12.5px;
+        line-height: 1.5;
+    }
+}
+
+/* --- Large / desktop (≥1024px): restore original layout --- */
+@media (min-width: 1024px) {
+    .facility-2 .fac-box1,
+    .facility-2 .fac-box2 {
+        display: block;
+        /* let Bootstrap grid control layout */
+        overflow: visible;
+    }
+
+    .facility-2 .fac-box1 > .row,
+    .facility-2 .fac-box2 > .row {
+        flex-wrap: wrap;
+        /* restore Bootstrap default */
+    }
+
+    .facility-2 .fac-box1 > .row > .img,
+    .facility-2 .fac-box2 > .row > .img {
+        flex: none;
+        max-width: none;
+        padding: 0;
+    }
+
+    .facility-2 .fac-box1 > .row > .img .img-fluid,
+    .facility-2 .fac-box2 > .row > .img .img-fluid {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+
+    .facility-2 .fac-box1 .content,
+    .facility-2 .fac-box2 .content {
+        padding-top: 20px !important;
+        padding: 20px 16px 16px 16px;
+    }
+
+    .facility-2 .fac-box1 .content h5,
+    .facility-2 .fac-box2 .content h5 {
+        font-size: 19px;
+        letter-spacing: 1.3px;
+    }
+
+    .facility-2 .col-lg-6 {
+        margin-bottom: 0;
+    }
+}
+
+
+/* ================================================================
+   10. FOOTER — All breakpoints
+   ================================================================ */
+
+/* xs ≤ 479px */
+@media (max-width: 479px) {
+  footer .footer-col-1,
+  footer .footer-col-2,
+  footer .footer-col-3 {
+    width: 100% !important; 
+    max-width: 100% !important; 
+    flex: 0 0 100% !important;
+    margin-bottom: 24px; 
+    padding-right: 0 !important; 
+    padding-left: 0 !important;
+    border-right: none !important;
+  }
+  .footer-logo { width: 140px; max-width: 140px; }
+  .social-icons a { width: 34px; height: 34px; font-size: 15px; }
+}
+
+/* sm 480–575px */
+@media (min-width: 480px) and (max-width: 575px) {
+  footer .footer-col-1,
+  footer .footer-col-2,
+  footer .footer-col-3 {
+    width: 100% !important; max-width: 100% !important; flex: 0 0 100% !important;
+    margin-bottom: 20px; padding-right: 0 !important; padding-left: 0 !important;
+    border-right: none !important;
+  }
+  .footer-logo { width: 150px; max-width: 150px; }
+}
+
+/* md 576–767px */
+@media (min-width: 576px) and (max-width: 767px) {
+  footer .footer-col-1 {
+    width: 100% !important; max-width: 100% !important; flex: 0 0 100% !important;
+    padding-right: 0 !important; border-right: none !important; margin-bottom: 20px;
+  }
+  footer .footer-col-2 {
+    width: 50% !important; max-width: 50% !important; flex: 0 0 50% !important;
+    padding-left: 0 !important;
+  }
+  footer .footer-col-3 {
+    width: 50% !important; max-width: 50% !important; flex: 0 0 50% !important;
+  }
+  .footer-logo { width: 160px; max-width: 160px; }
+}
+
+/* lg tablet 768–991px */
+@media (min-width: 768px) and (max-width: 991px) {
+  footer .footer-col-1 {
+    width: 100% !important; max-width: 100% !important; flex: 0 0 100% !important;
+    padding-right: 0 !important; border-right: none !important; margin-bottom: 20px;
+  }
+  footer .footer-col-2 {
+    width: 50% !important; max-width: 50% !important; flex: 0 0 50% !important;
+    padding-left: 16px !important;
+  }
+  footer .footer-col-3 {
+    width: 48% !important; max-width: 48% !important; flex: 0 0 48% !important;
+  }
+  .footer-logo { width: 170px; max-width: 170px; }
+}
+
+/* xl 992–1199px */
+@media (min-width: 992px) and (max-width: 1199px) {
+  footer .footer-col-1 {
+    width: 38% !important; max-width: 38% !important; flex: 0 0 38% !important;
+    padding-right: 20px !important; border-right: 1px solid #dddddd61 !important;
+  }
+  footer .footer-col-2 {
+    width: 32% !important; max-width: 32% !important; flex: 0 0 32% !important;
+    padding-left: 20px !important;
+  }
+  footer .footer-col-3 {
+    width: 28% !important; max-width: 28% !important; flex: 0 0 28% !important;
+    padding-left: 10px !important;
+  }
+  .footer-logo { width: 155px; max-width: 155px; }
+  footer .footer-bt p { font-size: 14px; }
+  footer .enq a, footer a { font-size: 15px; }
+  footer p { font-size: 14px; }
+  footer .footer-links a { font-size: 15px; }
+}
+
+/* xxl 1200–1399px */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  footer .footer-col-1 { padding-right: 40px !important; }
+  footer .footer-col-2 { padding-left: 30px !important; }
+  .footer-logo { width: 175px; max-width: 175px; }
+}
+
+/* 125% zoom — viewport ~860–1010px */
+@media (min-width: 860px) and (max-width: 1010px) {
+  footer.footer-section .container .row { flex-wrap: wrap !important; }
+  footer .footer-col-1 {
+    width: 100% !important; max-width: 100% !important; flex: 0 0 100% !important;
+    padding-right: 0 !important; border-right: none !important;
+    border-bottom: 1px solid #dddddd61; padding-bottom: 20px !important; margin-bottom: 20px !important;
+  }
+  footer .footer-col-2 {
+    width: 50% !important; max-width: 50% !important; flex: 0 0 50% !important;
+    padding-left: 0 !important;
+  }
+  footer .footer-col-3 {
+    width: 50% !important; max-width: 50% !important; flex: 0 0 50% !important;
+    padding-left: 20px !important;
+  }
+  .footer-logo { width: 155px; max-width: 155px; }
+  footer .footer-links a { font-size: 15px; }
+  footer .enq a, footer a { font-size: 15px; }
+  footer p { font-size: 14px; }
+}
+
+
+/* ================================================================
+   11. CAROUSEL CONTROLS
+   ================================================================ */
+
+@media (max-width: 575px) {
+  .carousel-control-prev, .carousel-control-next {
+    width: 32px; height: 32px; top: 50%; transform: translateY(-50%);
+  }
+  .carousel-control-next-icon, .carousel-control-prev-icon {
+    width: 1rem; height: 1rem;
+  }
+}
+
+
+/* ================================================================
+   12. SCROLL-TOP & WHATSAPP
+   ================================================================ */
+
+@media (max-width: 479px) {
+  #scrollTopBtn { width: 36px; height: 36px; font-size: 14px; bottom: 70px; right: 12px; }
+  .whatsapp-float { width: 44px; height: 44px; font-size: 22px; bottom: 18px; right: 12px; }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  #scrollTopBtn { width: 38px; height: 38px; font-size: 15px; bottom: 72px; right: 14px; }
+  .whatsapp-float { width: 46px; height: 46px; font-size: 24px; bottom: 18px; right: 14px; }
+}
+
+
+/* ================================================================
+   13. 110% ZOOM — COMPREHENSIVE FIX
+   ================================================================
+   At 110% browser zoom, the viewport shrinks to ~1050–1280px.
+   Root problem:
+     - Bootstrap .container has a max-width (e.g. 1140px at ≥1200px,
+       960px at ≥992px). At 110% the container is narrower.
+     - footer-col-1 has padding-right: 70px in style.css. This is
+       way too large for the compressed viewport.
+     - footer-bt is a SEPARATE .container div outside the inner
+       .container, so Bootstrap may compute a different max-width
+       for it vs the columns container — this is what causes the
+       copyright bar to appear misaligned (wider or narrower).
+   Solution:
+     - Override col widths with explicit flex values that sum to 100%
+     - Kill the oversized padding-right on col-1
+     - Force footer-bt.container to match the inner container exactly
+       by setting the same max-width Bootstrap uses at that viewport
+*/
+
+/* 110% on 1280px screen → ~1163px viewport */
+@media (min-width: 1050px) and (max-width: 1199px) {
+  footer .footer-col-1 {
+    width: 40% !important;
+    max-width: 40% !important;
+    flex: 0 0 40% !important;
+    padding-right: 24px !important;
+    border-right: 1px solid #dddddd61 !important;
+  }
+  footer .footer-col-2 {
+    width: 32% !important;
+    max-width: 32% !important;
+    flex: 0 0 32% !important;
+    padding-left: 24px !important;
+  }
+  footer .footer-col-3 {
+    width: 28% !important;
+    max-width: 28% !important;
+    flex: 0 0 28% !important;
+    padding-left: 12px !important;
+  }
+  .footer-logo { width: 150px; max-width: 150px; }
+  footer .footer-links a { font-size: 14px; }
+  footer .enq a, footer a { font-size: 14px; }
+  footer p { font-size: 13px; }
+  footer h5 { font-size: 15px; }
+}
+
+/* 110% on 1366px screen → ~1242px viewport */
+@media (min-width: 1200px) and (max-width: 1310px) {
+  footer .footer-col-1 {
+    width: 40% !important;
+    max-width: 40% !important;
+    flex: 0 0 40% !important;
+    padding-right: 26px !important;
+    border-right: 1px solid #dddddd61 !important;
+  }
+  footer .footer-col-2 {
+    width: 32% !important;
+    max-width: 32% !important;
+    flex: 0 0 32% !important;
+    padding-left: 26px !important;
+  }
+  footer .footer-col-3 {
+    width: 28% !important;
+    max-width: 28% !important;
+    flex: 0 0 28% !important;
+    padding-left: 14px !important;
+  }
+  .footer-logo { width: 160px; max-width: 160px; }
+  footer .footer-links a { font-size: 15px; }
+  footer .enq a, footer a { font-size: 15px; }
+  footer p { font-size: 14px; }
+}
+
+/* 110% on 1920px screen → ~1745px viewport — no layout issue but reduce huge padding */
+@media (min-width: 1600px) {
+  footer .footer-col-1 {
+    padding-right: 60px !important;
+  }
+}
+
+
+/* ================================================================
+   14. FOOTER-BT STRUCTURAL FIX
+   footer-bt is now inside .container — remove any leftover
+   .container class overrides and ensure it stays full-width
+   within its parent container at every zoom level.
+   ================================================================ */
+footer .footer-bt {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  text-align: center !important;
+}
+
+
+/* ============================================================
+   7 — WHATSAPP FLOAT & SCROLL-TO-TOP BUTTON
+   ============================================================ */
+
+/*
+ * On very small screens the fixed buttons can overlap content or each
+ * other. Move them closer to the edge and slightly smaller on xs.
+ */
+
+@media (max-width: 420px) {
+    #scrollTopBtn {
+        width: 38px;
+        height: 38px;
+        font-size: 15px;
+        bottom: 16px;
+        right: 16px;
+    }
+
+    .whatsapp-float {
+        bottom: 64px !important;
+        right: 14px !important;
+        width: 48px !important;
+        height: 48px !important;
+        font-size: 26px !important;
+    }
+}
+
+@media (min-width: 421px) and (max-width: 768px) {
+    #scrollTopBtn {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .whatsapp-float {
+        bottom: 72px !important;
+        right: 18px !important;
+    }
+}

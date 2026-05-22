@@ -1,0 +1,584 @@
+/*
+ * about-responsive.css  —  Responsive overrides for about.html ONLY
+ * Link AFTER style.css in about.html (already wired up).
+ * Does NOT change desktop design or layout.
+ *
+ * Breakpoints used (mirrors Bootstrap 5 grid):
+ *   xl  : ≥1200px  — desktop (no overrides needed)
+ *   lg  : <992px   — small desktop / landscape tablet
+ *   md  : <768px   — portrait tablet
+ *   sm  : <576px   — large phone
+ *   xs  : <480px   — small phone
+ *   xxs : <360px   — very small phone
+ *
+ * Sections covered:
+ *   0.  GLOBAL / BODY
+ *   1.  NAVBAR & MOBILE SIDEBAR
+ *   2.  ABOUT BANNER
+ *   3.  ABOUT-1  (intro text + image + stats)
+ *   4.  ABOUT-2  (history & establishment box)
+ *   5.  ABOUT-3  (founder section — row col-4 / col)
+ *   6.  ABOUT-4  (location & campus flip cards)
+ *   7.  FOOTER
+ *   8.  FLOATING BUTTONS (WhatsApp / scroll-to-top)
+ * ============================================================ */
+
+
+/* ============================================================
+   0. GLOBAL
+   ============================================================ */
+@media (max-width: 991px) {
+    body {
+        overflow-x: hidden;
+    }
+}
+
+
+/* ================================================================
+   1. NAVBAR / HEADER
+   ================================================================ */
+
+@media (max-width: 479px) {
+  header .navbar .container-fluid {
+    height: auto;
+    padding: 10px 12px;
+  }
+  header .logo-img { width: 130px !important; }
+  .offcanvas.offcanvas-end { width: 100vw; max-width: 100%; }
+  .offcanvas .nav-link { font-size: 15px; padding: 11px 14px; }
+}
+@media (min-width: 480px) and (max-width: 575px) {
+  header .logo-img { width: 150px !important; }
+  header .navbar .container-fluid { height: auto; padding: 10px 16px; }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  header .logo-img { width: 170px !important; }
+  header .navbar .container-fluid { height: auto; padding: 12px 20px; }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  header .logo-img { width: 190px !important; }
+  header .navbar .container-fluid { height: auto; padding: 14px 20px; }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  header .logo-img { width: 190px !important; }
+  header .navbar-light .navbar-nav .nav-link { font-size: 13px; padding: 5px 12px; margin-right: 4px; }
+  header .icon-box { max-width: 240px; height: 56px; }
+  header .navbar .container-fluid { height: 80px; padding: 0 16px; }
+}
+@media (min-width: 1200px) and (max-width: 1399px) {
+  header .navbar-light .navbar-nav .nav-link { font-size: 15px; padding: 5px 18px; margin-right: 6px; }
+  header .icon-box { max-width: 280px; }
+  header .navbar .container-fluid { height: 90px; }
+}
+@media (min-width: 1400px) and (max-width: 1599px) {
+  header .navbar-light .navbar-nav .nav-link { font-size: 16px; }
+}
+
+/* ============================================================
+   2. ABOUT BANNER
+   ============================================================ */
+
+/* lg (tablet landscape) */
+@media (max-width: 991px) {
+    .about-banner {
+        height: 200px;
+        margin-top: 80px;
+    }
+
+    .about-banner h2 {
+        font-size: 52px;
+        line-height: 66px;
+    }
+}
+
+/* md (portrait tablet) */
+@media (max-width: 767px) {
+    .about-banner {
+        height: 180px;
+        margin-top: 70px;
+    }
+
+    .about-banner h2 {
+        font-size: 42px;
+        line-height: 54px;
+    }
+}
+
+/* sm (large phone) */
+@media (max-width: 575px) {
+    .about-banner {
+        height: 160px;
+        margin-top: 62px;
+    }
+
+    .about-banner h2 {
+        font-size: 34px;
+        line-height: 44px;
+    }
+}
+
+/* xs (small phone) */
+@media (max-width: 480px) {
+    .about-banner {
+        height: 140px;
+        margin-top: 58px;
+    }
+
+    .about-banner h2 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+}
+
+/* xxs */
+@media (max-width: 360px) {
+    .about-banner h2 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
+
+/* ============================================================
+   3. ABOUT-1  (intro text + image + stats)
+   ============================================================ */
+
+/* lg — stats box has a fixed 350px width; make it fluid */
+@media (max-width: 991px) {
+    .about-1 .about-1-inner .about-part2 .about-stats .stats-box {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* md — stack image + stats column vertically */
+@media (max-width: 767px) {
+    /* The row uses Bootstrap col-12 col-lg-8 for image, so it already stacks.
+       Ensure the stats column also goes full width and centres nicely. */
+    .about-1 .about-1-inner .about-part2 .about-stats {
+        margin-top: 24px;
+        padding: 0 8px;
+    }
+
+    .about-1 .about-1-inner .about-part2 .about-stats .stats-box {
+        width: 100%;
+        padding: 12px 20px;
+    }
+
+    .about-1 .about-1-inner .about-part2 .about-img {
+        padding: 0;
+    }
+}
+
+/* sm */
+@media (max-width: 575px) {
+    .about-1 {
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+    .about-1 .about-1-inner .about-part1 {
+        font-size: 14px;
+        line-height: 1.7;
+        padding-bottom: 14px;
+    }
+
+    .about-1 .about-1-inner .about-part2 .about-stats {
+        margin-top: 20px;
+    }
+
+    .about-1 .about-1-inner .about-part2 .about-stats .stats-box {
+        width: 100%;
+        padding: 10px 14px;
+    }
+
+    .about-1 .about-1-inner .about-part2 .about-stats .stats-box h2 {
+        font-size: 26px;
+    }
+
+    .about-1 .about-1-inner .about-part2 .about-stats .stats-box p {
+        font-size: 13px;
+    }
+}
+
+/* xs */
+@media (max-width: 480px) {
+    .about-1 .about-1-inner .about-part2 .about-stats .stats-box h2 {
+        font-size: 22px;
+    }
+}
+
+
+/* ============================================================
+   4. ABOUT-2  (History & Establishment — blue info box)
+   ============================================================ */
+
+/* lg */
+@media (max-width: 991px) {
+    .about-2 .box {
+        padding: 36px 32px;
+    }
+
+    .about-2 .box .title {
+        font-size: 26px;
+    }
+}
+
+/* md */
+@media (max-width: 767px) {
+    .about-2 .box {
+        padding: 28px 22px;
+    }
+
+    .about-2 .box .title {
+        font-size: 22px;
+    }
+
+    .about-2 .p1,
+    .about-2 .p2 {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+}
+
+/* sm */
+@media (max-width: 575px) {
+    .about-2 .box {
+        padding: 22px 16px;
+        border-radius: 10px;
+    }
+
+    .about-2 .box .title {
+        font-size: 20px;
+    }
+}
+
+/* xs */
+@media (max-width: 480px) {
+    .about-2 .box {
+        padding: 18px 12px;
+    }
+
+    .about-2 .box .title {
+        font-size: 18px;
+    }
+}
+
+
+/* ============================================================
+   5. ABOUT-3  (Founder / Vision — teal bg, Bootstrap row col-4/col)
+   ============================================================ */
+
+/* lg — give the image column a sensible size and allow text to breathe */
+@media (max-width: 991px) {
+    .about-3 .row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-3 .row .col-4 {
+        width: 60%;
+        max-width: 320px;
+        flex: none;
+        margin-bottom: 24px;
+    }
+
+    .about-3 .row .col {
+        width: 100%;
+        flex: none;
+        padding: 0 16px;
+    }
+
+    .about-3 .section-title {
+        font-size: 26px;
+        line-height: 1.3;
+    }
+
+    .about-3 .desc-1,
+    .about-3 .desc-2 {
+        font-size: 15px;
+        line-height: 1.75;
+        text-align: left;
+    }
+}
+
+/* md */
+@media (max-width: 767px) {
+    .about-3 .row .col-4 {
+        width: 70%;
+        max-width: 260px;
+    }
+
+    .about-3 .section-title {
+        font-size: 22px;
+    }
+
+    .about-3 .desc-1,
+    .about-3 .desc-2 {
+        font-size: 14px;
+    }
+}
+
+/* sm */
+@media (max-width: 575px) {
+    .about-3 {
+        padding-top: 32px !important;
+        padding-bottom: 32px !important;
+    }
+
+    .about-3 .row .col-4 {
+        width: 80%;
+        max-width: 220px;
+    }
+
+    .about-3 .section-title {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+
+    .about-3 .desc-1,
+    .about-3 .desc-2 {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+}
+
+/* xs */
+@media (max-width: 480px) {
+    .about-3 .row .col-4 {
+        width: 90%;
+        max-width: 200px;
+    }
+
+    .about-3 .section-title {
+        font-size: 18px;
+    }
+}
+
+/* xxs */
+@media (max-width: 360px) {
+    .about-3 .section-title {
+        font-size: 16px;
+    }
+
+    .about-3 .desc-1,
+    .about-3 .desc-2 {
+        font-size: 12px;
+    }
+}
+
+
+/* ============================================================
+   6. ABOUT-4  (Location & Campus — flip cards)
+   ============================================================ */
+
+/* style.css already uses auto-fit grid with minmax(350px,1fr), but
+   the inner .box has a fixed width:350px that breaks below ~390px.
+   Fix: make .box fluid inside the grid cell. */
+
+@media (max-width: 991px) {
+    .about-4 .section-title {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 767px) {
+    .about-4 .section-title {
+        font-size: 22px;
+    }
+
+    /* Reset any erroneous margin injected by the existing style.css
+       @media (max-width: 700px) rule (margin: 200px auto) */
+    .about-4 .wrapper {
+        margin-top: 24px !important;
+        margin-bottom: 0 !important;
+        grid-template-columns: 1fr;   /* single column on small screens */
+        gap: 24px;
+    }
+
+    .about-4 .wrapper .box {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 575px) {
+    .about-4 {
+        padding-top: 32px !important;
+        padding-bottom: 32px !important;
+    }
+
+    .about-4 .section-title {
+        font-size: 20px;
+    }
+
+    .about-4 .wrapper {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 8px;
+    }
+
+    .about-4 .wrapper .box {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .about-4 .wrapper .box .front-face,
+    .about-4 .wrapper .box .back-face {
+        border-radius: 16px;   /* round-rect suits narrow phones better than full circle */
+        height: 200px;
+    }
+
+    .about-4 .wrapper .box .front-face .icon {
+        height: 64px;
+    }
+
+    .about-4 .wrapper .box .front-face span,
+    .about-4 .wrapper .box .back-face span {
+        font-size: 18px;
+    }
+
+    .about-4 .wrapper .box .back-face p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-4 .wrapper .box .front-face,
+    .about-4 .wrapper .box .back-face {
+        height: 190px;
+    }
+}
+
+@media (max-width: 360px) {
+    .about-4 .section-title {
+        font-size: 18px;
+    }
+
+    .about-4 .wrapper .box .front-face span,
+    .about-4 .wrapper .box .back-face span {
+        font-size: 16px;
+    }
+}
+
+/* ================================================================
+   13. 110% ZOOM — COMPREHENSIVE FIX
+   ================================================================
+   At 110% browser zoom, the viewport shrinks to ~1050–1280px.
+   Root problem:
+     - Bootstrap .container has a max-width (e.g. 1140px at ≥1200px,
+       960px at ≥992px). At 110% the container is narrower.
+     - footer-col-1 has padding-right: 70px in style.css. This is
+       way too large for the compressed viewport.
+     - footer-bt is a SEPARATE .container div outside the inner
+       .container, so Bootstrap may compute a different max-width
+       for it vs the columns container — this is what causes the
+       copyright bar to appear misaligned (wider or narrower).
+   Solution:
+     - Override col widths with explicit flex values that sum to 100%
+     - Kill the oversized padding-right on col-1
+     - Force footer-bt.container to match the inner container exactly
+       by setting the same max-width Bootstrap uses at that viewport
+*/
+
+/* 110% on 1280px screen → ~1163px viewport */
+@media (min-width: 1050px) and (max-width: 1199px) {
+  footer .footer-col-1 {
+    width: 40% !important;
+    max-width: 40% !important;
+    flex: 0 0 40% !important;
+    padding-right: 24px !important;
+    border-right: 1px solid #dddddd61 !important;
+  }
+  footer .footer-col-2 {
+    width: 32% !important;
+    max-width: 32% !important;
+    flex: 0 0 32% !important;
+    padding-left: 24px !important;
+  }
+  footer .footer-col-3 {
+    width: 28% !important;
+    max-width: 28% !important;
+    flex: 0 0 28% !important;
+    padding-left: 12px !important;
+  }
+  .footer-logo { width: 150px; max-width: 150px; }
+  footer .footer-links a { font-size: 14px; }
+  footer .enq a, footer a { font-size: 14px; }
+  footer p { font-size: 13px; }
+  footer h5 { font-size: 15px; }
+}
+
+/* 110% on 1366px screen → ~1242px viewport */
+@media (min-width: 1200px) and (max-width: 1310px) {
+  footer .footer-col-1 {
+    width: 40% !important;
+    max-width: 40% !important;
+    flex: 0 0 40% !important;
+    padding-right: 26px !important;
+    border-right: 1px solid #dddddd61 !important;
+  }
+  footer .footer-col-2 {
+    width: 32% !important;
+    max-width: 32% !important;
+    flex: 0 0 32% !important;
+    padding-left: 26px !important;
+  }
+  footer .footer-col-3 {
+    width: 28% !important;
+    max-width: 28% !important;
+    flex: 0 0 28% !important;
+    padding-left: 14px !important;
+  }
+  .footer-logo { width: 160px; max-width: 160px; }
+  footer .footer-links a { font-size: 15px; }
+  footer .enq a, footer a { font-size: 15px; }
+  footer p { font-size: 14px; }
+}
+
+/* 110% on 1920px screen → ~1745px viewport — no layout issue but reduce huge padding */
+@media (min-width: 1600px) {
+  footer .footer-col-1 {
+    padding-right: 60px !important;
+  }
+}
+
+
+/* ================================================================
+   14. FOOTER-BT STRUCTURAL FIX
+   footer-bt is now inside .container — remove any leftover
+   .container class overrides and ensure it stays full-width
+   within its parent container at every zoom level.
+   ================================================================ */
+footer .footer-bt {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  text-align: center !important;
+}
+
+@media (max-width: 1200px) {
+    .about-3 .row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-3 .desc-1,
+    .about-3 .desc-2 {
+        text-align: left;
+    }
+}
+@media (max-width: 1200px) {
+    .about-1 .about-part2 {
+        flex-direction: row;
+        text-align: center;
+    }
+
+    .about-1 .about-stats {
+        margin-top: 20px;
+        align-items: center;
+    }
+}

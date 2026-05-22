@@ -1,0 +1,424 @@
+/* ============================================================
+   responsive-our-purpose.css
+   Responsive-only overrides for our-purpose.html
+   ─────────────────────────────────────────────────────────────
+   BREAKPOINT LADDER
+   xs   : max-width  479px   (small phones)
+   sm   : 480px – 575px      (large phones)
+   md   : 576px – 767px      (small tablets / landscape phones)
+   lg   : 768px – 991px      (tablets / small laptops)
+   xl   : 992px – 1199px     (laptops)
+   xxl  : 1200px+            (large desktops — base styles apply)
+
+   LOAD ORDER (in <head>, after style.css and index-responsive.css)
+   <link rel="stylesheet" href="Assets/CSS/style.css">
+   <link rel="stylesheet" href="Assets/CSS/index-responsive.css">
+   <link rel="stylesheet" href="Assets/CSS/responsive-our-purpose.css">
+   ============================================================ */
+
+
+
+   /* ================================================================
+   1. NAVBAR / HEADER
+   ================================================================ */
+
+@media (max-width: 479px) {
+  header .navbar .container-fluid {
+    height: auto;
+    padding: 10px 12px;
+  }
+  header .logo-img { width: 130px !important; }
+  .offcanvas.offcanvas-end { width: 100vw; max-width: 100%; }
+  .offcanvas .nav-link { font-size: 15px; padding: 11px 14px; }
+}
+@media (min-width: 480px) and (max-width: 575px) {
+  header .logo-img { width: 150px !important; }
+  header .navbar .container-fluid { height: auto; padding: 10px 16px; }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  header .logo-img { width: 170px !important; }
+  header .navbar .container-fluid { height: auto; padding: 12px 20px; }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  header .logo-img { width: 190px !important; }
+  header .navbar .container-fluid { height: auto; padding: 14px 20px; }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  header .logo-img { width: 190px !important; }
+  header .navbar-light .navbar-nav .nav-link { font-size: 13px; padding: 5px 12px; margin-right: 4px; }
+  header .icon-box { max-width: 240px; height: 56px; }
+  header .navbar .container-fluid { height: 80px; padding: 0 16px; }
+}
+@media (min-width: 1200px) and (max-width: 1399px) {
+  header .navbar-light .navbar-nav .nav-link { font-size: 15px; padding: 5px 18px; margin-right: 6px; }
+  header .icon-box { max-width: 280px; }
+  header .navbar .container-fluid { height: 90px; }
+}
+@media (min-width: 1400px) and (max-width: 1599px) {
+  header .navbar-light .navbar-nav .nav-link { font-size: 16px; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   1. PURPOSE BANNER
+   ══════════════════════════════════════════════════════════ */
+
+/* ── xs  (≤ 479px) ── */
+@media (max-width: 479px) {
+  .purpose-banner {
+    height: 160px;
+    margin-top: 70px;
+    background-position: center top;
+  }
+
+  .purpose-banner h2 {
+    font-size: 28px;
+    line-height: 1.2;
+    padding: 0 12px;
+  }
+}
+
+/* ── sm  (480 – 575px) ── */
+@media (min-width: 480px) and (max-width: 575px) {
+  .purpose-banner {
+    height: 180px;
+    margin-top: 75px;
+  }
+
+  .purpose-banner h2 {
+    font-size: 36px;
+  }
+}
+
+/* ── md  (576 – 767px) ── */
+@media (min-width: 576px) and (max-width: 767px) {
+  .purpose-banner {
+    height: 200px;
+    margin-top: 80px;
+  }
+
+  .purpose-banner h2 {
+    font-size: 44px;
+  }
+}
+
+/* ── lg  (768 – 991px) ── */
+@media (min-width: 768px) and (max-width: 991px) {
+  .purpose-banner {
+    height: 220px;
+    margin-top: 90px;
+  }
+
+  .purpose-banner h2 {
+    font-size: 54px;
+  }
+}
+
+/* ── xl  (992 – 1199px) ── */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .purpose-banner {
+    height: 235px;
+  }
+
+  .purpose-banner h2 {
+    font-size: 62px;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   2. PURPOSE SECTION — TITLE & HIGHLIGHT BADGE
+   ══════════════════════════════════════════════════════════ */
+
+/* ── xs  (≤ 479px) ── */
+@media (max-width: 479px) {
+  .purpose-1 .title {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .purpose-1 .title .highlight {
+    display: inline;
+    padding: 3px 4px;
+    font-size: 24px;
+  }
+}
+
+/* ── sm  (480 – 575px) ── */
+@media (min-width: 480px) and (max-width: 575px) {
+  .purpose-1 .title {
+    font-size: 28px;
+    line-height: 42px;
+  }
+
+  .purpose-1 .title .highlight {
+    font-size: 28px;
+  }
+}
+
+/* ── md  (576 – 767px) ── */
+@media (min-width: 576px) and (max-width: 767px) {
+  .purpose-1 .title {
+    font-size: 34px;
+    line-height: 50px;
+  }
+
+  .purpose-1 .title .highlight {
+    font-size: 34px;
+  }
+}
+
+/* ── lg  (768 – 991px) ── */
+@media (min-width: 768px) and (max-width: 991px) {
+  .purpose-1 .title {
+    font-size: 40px;
+    line-height: 58px;
+  }
+
+  .purpose-1 .title .highlight {
+    font-size: 40px;
+  }
+}
+
+/* ── xl  (992 – 1199px) ── */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .purpose-1 .title {
+    font-size: 46px;
+    line-height: 66px;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   3. TIMELINE — LAYOUT COLLAPSE
+   The two-column zigzag timeline collapses to a single,
+   left-aligned vertical list on tablets and below.
+   ══════════════════════════════════════════════════════════ */
+
+/* ── xs + sm + md + lg  (≤ 991px) — single-column stack ── */
+@media (max-width: 991px) {
+  /* Hide the centre line */
+  .purpose-1 .timeline::after {
+    display: none;
+  }
+
+  /* All items: full width, reset side offsets */
+  .purpose-1 .timeline .timeline-item,
+  .purpose-1 .timeline .timeline-item.left,
+  .purpose-1 .timeline .timeline-item.right {
+    width: 100%;
+    left: 0;
+    text-align: left;
+    padding: 16px 12px;
+  }
+
+  /* Reset right-aligned list markers */
+  .purpose-1 .timeline .timeline-item.left ul,
+  .purpose-1 .timeline .mission ul,
+  .purpose-1 .timeline .core ul {
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .purpose-1 .timeline .timeline-item .content {
+    padding: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  }
+
+  .purpose-1 .timeline .timeline-item .content h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .purpose-1 .timeline .timeline-item .content p,
+  .purpose-1 .timeline .timeline-item .content li {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .purpose-1 .timeline .timeline-item .content img {
+    width: 100%;
+    max-height: 260px;
+    object-fit: cover;
+    margin-top: 12px;
+  }
+}
+
+/* ── xs  (≤ 479px) — tighten further ── */
+@media (max-width: 479px) {
+  .purpose-1 .timeline .timeline-item,
+  .purpose-1 .timeline .timeline-item.left,
+  .purpose-1 .timeline .timeline-item.right {
+    padding: 10px 6px;
+  }
+
+  .purpose-1 .timeline .timeline-item .content {
+    padding: 12px 10px;
+  }
+
+  .purpose-1 .timeline .timeline-item .content h3 {
+    font-size: 18px;
+  }
+
+  .purpose-1 .timeline .timeline-item .content p,
+  .purpose-1 .timeline .timeline-item .content li {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .purpose-1 .timeline .timeline-item .content img {
+    max-height: 200px;
+  }
+}
+
+/* ── sm  (480 – 575px) ── */
+@media (min-width: 480px) and (max-width: 575px) {
+  .purpose-1 .timeline .timeline-item .content img {
+    max-height: 220px;
+  }
+}
+
+/* ── md  (576 – 767px) ── */
+@media (min-width: 576px) and (max-width: 767px) {
+  .purpose-1 .timeline .timeline-item .content img {
+    max-height: 240px;
+  }
+}
+
+/* ── xl  (992 – 1199px) — two-column, minor tune-up ── */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .purpose-1 .timeline {
+    max-width: 960px;
+  }
+
+  .purpose-1 .timeline .timeline-item .content h3 {
+    font-size: 20px;
+  }
+
+  .purpose-1 .timeline .timeline-item .content p,
+  .purpose-1 .timeline .timeline-item .content li {
+    font-size: 15px;
+  }
+
+  .purpose-1 .timeline .timeline-item .content img {
+    max-height: 280px;
+    object-fit: cover;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   4. PURPOSE SECTION — CONTAINER PADDING
+   ══════════════════════════════════════════════════════════ */
+
+@media (max-width: 479px) {
+  .purpose-1.container.py-5 {
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .purpose-1.container.py-5 {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+}
+
+/* ================================================================
+   13. 110% ZOOM — COMPREHENSIVE FIX
+   ================================================================
+   At 110% browser zoom, the viewport shrinks to ~1050–1280px.
+   Root problem:
+     - Bootstrap .container has a max-width (e.g. 1140px at ≥1200px,
+       960px at ≥992px). At 110% the container is narrower.
+     - footer-col-1 has padding-right: 70px in style.css. This is
+       way too large for the compressed viewport.
+     - footer-bt is a SEPARATE .container div outside the inner
+       .container, so Bootstrap may compute a different max-width
+       for it vs the columns container — this is what causes the
+       copyright bar to appear misaligned (wider or narrower).
+   Solution:
+     - Override col widths with explicit flex values that sum to 100%
+     - Kill the oversized padding-right on col-1
+     - Force footer-bt.container to match the inner container exactly
+       by setting the same max-width Bootstrap uses at that viewport
+*/
+
+/* 110% on 1280px screen → ~1163px viewport */
+@media (min-width: 1050px) and (max-width: 1199px) {
+  footer .footer-col-1 {
+    width: 40% !important;
+    max-width: 40% !important;
+    flex: 0 0 40% !important;
+    padding-right: 24px !important;
+    border-right: 1px solid #dddddd61 !important;
+  }
+  footer .footer-col-2 {
+    width: 32% !important;
+    max-width: 32% !important;
+    flex: 0 0 32% !important;
+    padding-left: 24px !important;
+  }
+  footer .footer-col-3 {
+    width: 28% !important;
+    max-width: 28% !important;
+    flex: 0 0 28% !important;
+    padding-left: 12px !important;
+  }
+  .footer-logo { width: 150px; max-width: 150px; }
+  footer .footer-links a { font-size: 14px; }
+  footer .enq a, footer a { font-size: 14px; }
+  footer p { font-size: 13px; }
+  footer h5 { font-size: 15px; }
+}
+
+/* 110% on 1366px screen → ~1242px viewport */
+@media (min-width: 1200px) and (max-width: 1310px) {
+  footer .footer-col-1 {
+    width: 40% !important;
+    max-width: 40% !important;
+    flex: 0 0 40% !important;
+    padding-right: 26px !important;
+    border-right: 1px solid #dddddd61 !important;
+  }
+  footer .footer-col-2 {
+    width: 32% !important;
+    max-width: 32% !important;
+    flex: 0 0 32% !important;
+    padding-left: 26px !important;
+  }
+  footer .footer-col-3 {
+    width: 28% !important;
+    max-width: 28% !important;
+    flex: 0 0 28% !important;
+    padding-left: 14px !important;
+  }
+  .footer-logo { width: 160px; max-width: 160px; }
+  footer .footer-links a { font-size: 15px; }
+  footer .enq a, footer a { font-size: 15px; }
+  footer p { font-size: 14px; }
+}
+
+/* 110% on 1920px screen → ~1745px viewport — no layout issue but reduce huge padding */
+@media (min-width: 1600px) {
+  footer .footer-col-1 {
+    padding-right: 60px !important;
+  }
+}
+
+
+/* ================================================================
+   14. FOOTER-BT STRUCTURAL FIX
+   footer-bt is now inside .container — remove any leftover
+   .container class overrides and ensure it stays full-width
+   within its parent container at every zoom level.
+   ================================================================ */
+footer .footer-bt {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  text-align: center !important;
+}

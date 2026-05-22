@@ -1,0 +1,534 @@
+/*
+ * trust-management-responsive.css
+ * Responsive overrides for trust-management.html ONLY.
+ * Link AFTER style.css in <head>. Does NOT alter any desktop rule.
+ *
+ * ─────────────────────────────────────────────────────────────────────────────
+ * BREAKPOINT MAP
+ * ─────────────────────────────────────────────────────────────────────────────
+ *  Breakpoint   Max-width   Rationale
+ *  ──────────── ─────────── ────────────────────────────────────────────────────
+ *  lg           991px       Bootstrap navbar collapse threshold. Banner title
+ *                           gets its first step-down. .col-4 / .col-8 pairs
+ *                           inside .trust-1 begin to crowd — start adjusting.
+ *
+ *  md           767px       Medium tablets (iPad portrait). The fixed col-4
+ *                           circle column becomes too narrow; stack the pairs
+ *                           vertically and centre the circle image.
+ *
+ *  sm           575px       Large phones / small tablets. Banner height
+ *                           reduces further; circle shrinks; box padding trims.
+ *
+ *  xs           479px       Standard phones. Further font & circle reductions.
+ *
+ *  xxs          359px       Smallest common viewport. Final floor values to
+ *                           prevent overflow on very small screens.
+ * ─────────────────────────────────────────────────────────────────────────────
+ *
+ * DESIGN CONTRACT
+ * ─────────────────────────────────────────────────────────────────────────────
+ *  • Section ORDER and visual identity (colours, backgrounds, borders) are
+ *    never changed.
+ *  • .trust-1 .box rows stack vertically below md; image always centred
+ *    when stacked. The image-right box (box 2) reorders so image appears
+ *    after text on mobile — consistent with box 1 and 3 pattern.
+ *  • The circular frame (::before arc + ::after ring) scales with the
+ *    circle-wrapper size so the decorative borders stay proportional.
+ *  • .trust-box-title and paragraph text step down gracefully.
+ *  • No selector overrides colour, background, border-radius, box-shadow,
+ *    or any other purely cosmetic desktop property.
+ * ─────────────────────────────────────────────────────────────────────────────
+ *
+ * EXPLICIT RULES PER BREAKPOINT
+ * ─────────────────────────────────────────────────────────────────────────────
+ *  @991px  : Banner h2 55px / height 220px | circle-wrapper 260px |
+ *            box padding 24px | trust-box-title 22px
+ *
+ *  @767px  : Banner h2 44px / height 200px | col-4 / col-8 → full-width
+ *            stacked | circle centred | circle-wrapper 220px |
+ *            box padding 20px | title 20px | body text 15px
+ *
+ *  @575px  : Banner h2 34px / height 170px | circle-wrapper 180px |
+ *            box padding 16px | title 18px | body text 14px
+ *
+ *  @479px  : Banner h2 28px / height 150px | circle-wrapper 150px |
+ *            title 16px | body text 13.5px
+ *
+ *  @359px  : Banner h2 22px | circle-wrapper 130px | title 15px |
+ *            body text 13px
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
+
+/* ===========================================================================
+   §1  BANNER  (.trust-banner, .trust-banner h2)
+   ─────────────────────────────────────────────────────────────────────────────
+   Problem:  h2 is 70px fixed and banner height is 250px fixed. On tablets
+             the title wraps awkwardly; on phones it overflows the banner.
+   Fix:      Step font-size down in four increments; allow banner height to
+             shrink at the two smallest sizes. Background and flex layout
+             are never touched.
+   =========================================================================== */
+
+
+
+   /* ================================================================
+   1. NAVBAR / HEADER
+   ================================================================ */
+
+@media (max-width: 479px) {
+  header .navbar .container-fluid {
+    height: auto;
+    padding: 10px 12px;
+  }
+  header .logo-img { width: 130px !important; }
+  .offcanvas.offcanvas-end { width: 100vw; max-width: 100%; }
+  .offcanvas .nav-link { font-size: 15px; padding: 11px 14px; }
+}
+@media (min-width: 480px) and (max-width: 575px) {
+  header .logo-img { width: 150px !important; }
+  header .navbar .container-fluid { height: auto; padding: 10px 16px; }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  header .logo-img { width: 170px !important; }
+  header .navbar .container-fluid { height: auto; padding: 12px 20px; }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  header .logo-img { width: 190px !important; }
+  header .navbar .container-fluid { height: auto; padding: 14px 20px; }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  header .logo-img { width: 190px !important; }
+  header .navbar-light .navbar-nav .nav-link { font-size: 13px; padding: 5px 12px; margin-right: 4px; }
+  header .icon-box { max-width: 240px; height: 56px; }
+  header .navbar .container-fluid { height: 80px; padding: 0 16px; }
+}
+@media (min-width: 1200px) and (max-width: 1399px) {
+  header .navbar-light .navbar-nav .nav-link { font-size: 15px; padding: 5px 18px; margin-right: 6px; }
+  header .icon-box { max-width: 280px; }
+  header .navbar .container-fluid { height: 90px; }
+}
+@media (min-width: 1400px) and (max-width: 1599px) {
+  header .navbar-light .navbar-nav .nav-link { font-size: 16px; }
+}
+/* — 991px: first tablet step-down — */
+@media (max-width: 991px) {
+    .trust-banner {
+        height: 220px;
+    }
+    .trust-banner h2 {
+        font-size: 55px;
+        line-height: 68px;
+    }
+}
+
+/* — 767px: medium tablet — */
+@media (max-width: 767px) {
+    .trust-banner {
+        height: 200px;
+    }
+    .trust-banner h2 {
+        font-size: 44px;
+        line-height: 56px;
+    }
+}
+
+/* — 575px: large-phone / small-tablet — */
+@media (max-width: 575px) {
+    .trust-banner {
+        height: 170px;
+    }
+    .trust-banner h2 {
+        font-size: 34px;
+        line-height: 44px;
+    }
+}
+
+/* — 479px: standard phone — */
+@media (max-width: 479px) {
+    .trust-banner {
+        height: 150px;
+    }
+    .trust-banner h2 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+}
+
+/* — 359px: smallest viewport — */
+@media (max-width: 359px) {
+    .trust-banner h2 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+}
+
+
+/* ===========================================================================
+   §2  TRUST-1 BOX  (.trust-1 .box — white card container)
+   ─────────────────────────────────────────────────────────────────────────────
+   Problem:  .box has padding: 30px fixed. On very small phones this wastes
+             horizontal space inside the already-narrow card.
+   Fix:      Trim padding at sm and below. Background, border-radius, and
+             border are untouched.
+   =========================================================================== */
+
+@media (max-width: 991px) {
+    .trust-1 .box {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 767px) {
+    .trust-1 .box {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    .trust-1 .box {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 479px) {
+    .trust-1 .box {
+        padding: 14px;
+    }
+}
+
+
+/* ===========================================================================
+   §3  TRUST-1 COLUMNS  (.trust-1 .box .col-4 / .col-8)
+   ─────────────────────────────────────────────────────────────────────────────
+   Problem:  The rows use hard-coded Bootstrap .col-4 (image) and .col-8
+             (text) — not responsive col-lg-* variants. At 767px the col-4
+             column is only ~200px wide, which squeezes the 300px circle-wrapper
+             causing overflow and layout breakage. The text column becomes
+             uncomfortably narrow too.
+   Fix:      Below md (767px), override both columns to full-width (100%) so
+             they stack vertically. Centre the image column. For the reversed
+             layout (box 2: text col-8 first, image col-4 second), use
+             flex order to move the image above the text on mobile — keeping
+             the visual language consistent across all three boxes.
+   =========================================================================== */
+
+@media (max-width: 767px) {
+    /* Make all col-4 and col-8 inside trust-1 boxes full-width */
+    .trust-1 .box .col-4,
+    .trust-1 .box .col-8 {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* Centre the circle image column when stacked */
+    .trust-1 .box .col-4 {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    /* For box 2 (image is col-4 on the RIGHT at desktop):
+       Reorder so image appears first on mobile for visual consistency */
+    .trust-1 .box .row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Image col always floats to top */
+    .trust-1 .box .col-4 {
+        order: -1;
+    }
+}
+
+
+/* ===========================================================================
+   §4  CIRCLE-WRAPPER  (.trust-1 .box .circle-wrapper)
+   ─────────────────────────────────────────────────────────────────────────────
+   Problem:  circle-wrapper is 300px × 300px fixed. The decorative ::before
+             arc has inset: -15px and the ::after inner ring has inset: 10px.
+             Both are absolute-positioned relative to the wrapper. When the
+             wrapper shrinks, the pseudo-element insets must scale accordingly
+             so the decorative rings don't overlap the photo or exceed the
+             wrapper's bounds.
+   Fix:      Progressively reduce width/height of .circle-wrapper. The
+             ::before and ::after pseudo-elements use inset values — keep
+             them proportional to the new size. Border widths scale slightly
+             too. Colours and border-style are never changed.
+   =========================================================================== */
+
+/* — 991px — */
+@media (max-width: 991px) {
+    .trust-1 .box .circle-wrapper {
+        width: 260px;
+        height: 260px;
+    }
+    .trust-1 .box .circle-wrapper::before {
+        inset: -13px;
+        border-width: 11px;
+    }
+    .trust-1 .box .circle-wrapper::after {
+        inset: 9px;
+        border-width: 5px;
+    }
+}
+
+/* — 767px — */
+@media (max-width: 767px) {
+    .trust-1 .box .circle-wrapper {
+        width: 220px;
+        height: 220px;
+    }
+    .trust-1 .box .circle-wrapper::before {
+        inset: -12px;
+        border-width: 10px;
+    }
+    .trust-1 .box .circle-wrapper::after {
+        inset: 8px;
+        border-width: 5px;
+    }
+}
+
+/* — 575px — */
+@media (max-width: 575px) {
+    .trust-1 .box .circle-wrapper {
+        width: 180px;
+        height: 180px;
+    }
+    .trust-1 .box .circle-wrapper::before {
+        inset: -10px;
+        border-width: 8px;
+    }
+    .trust-1 .box .circle-wrapper::after {
+        inset: 7px;
+        border-width: 4px;
+    }
+}
+
+/* — 479px — */
+@media (max-width: 479px) {
+    .trust-1 .box .circle-wrapper {
+        width: 150px;
+        height: 150px;
+    }
+    .trust-1 .box .circle-wrapper::before {
+        inset: -9px;
+        border-width: 7px;
+    }
+    .trust-1 .box .circle-wrapper::after {
+        inset: 6px;
+        border-width: 4px;
+    }
+}
+
+/* — 359px — */
+@media (max-width: 359px) {
+    .trust-1 .box .circle-wrapper {
+        width: 130px;
+        height: 130px;
+    }
+    .trust-1 .box .circle-wrapper::before {
+        inset: -8px;
+        border-width: 6px;
+    }
+    .trust-1 .box .circle-wrapper::after {
+        inset: 5px;
+        border-width: 3px;
+    }
+}
+
+
+/* ===========================================================================
+   §5  TRUST-BOX-TITLE  (.trust-box-title)
+   ─────────────────────────────────────────────────────────────────────────────
+   Problem:  .trust-box-title has no explicit font-size in style.css — it
+             inherits h3 sizing (~1.75rem / ~28px). On tablets and phones
+             this can wrap excessively or feel oversized relative to the
+             narrower card.
+   Fix:      Step the title font-size down at md and below. Font-family,
+             font-weight, colour, and margin are never changed.
+   =========================================================================== */
+
+@media (max-width: 991px) {
+    .trust-1 .box .trust-box-title {
+        font-size: 22px;
+        line-height: 1.3;
+    }
+}
+
+@media (max-width: 767px) {
+    .trust-1 .box .trust-box-title {
+        font-size: 20px;
+        margin-top: 0;
+        margin-bottom: 14px;
+    }
+}
+
+@media (max-width: 575px) {
+    .trust-1 .box .trust-box-title {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 479px) {
+    .trust-1 .box .trust-box-title {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 359px) {
+    .trust-1 .box .trust-box-title {
+        font-size: 15px;
+    }
+}
+
+
+/* ===========================================================================
+   §6  TRUST-1 BODY TEXT  (.trust-1 .box p)
+   ─────────────────────────────────────────────────────────────────────────────
+   Problem:  Paragraph text inherits the base font-size (~16px). On very
+             small screens this can feel large relative to the compact card.
+   Fix:      Step paragraph font-size down at sm and below. Line-height is
+             adjusted for readability. Colour is never touched.
+   =========================================================================== */
+
+@media (max-width: 767px) {
+    .trust-1 .box p {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+}
+
+@media (max-width: 575px) {
+    .trust-1 .box p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 479px) {
+    .trust-1 .box p {
+        font-size: 13.5px;
+    }
+}
+
+@media (max-width: 359px) {
+    .trust-1 .box p {
+        font-size: 13px;
+    }
+}
+
+/* ================================================================
+   13. 110% ZOOM — COMPREHENSIVE FIX
+   ================================================================
+   At 110% browser zoom, the viewport shrinks to ~1050–1280px.
+   Root problem:
+     - Bootstrap .container has a max-width (e.g. 1140px at ≥1200px,
+       960px at ≥992px). At 110% the container is narrower.
+     - footer-col-1 has padding-right: 70px in style.css. This is
+       way too large for the compressed viewport.
+     - footer-bt is a SEPARATE .container div outside the inner
+       .container, so Bootstrap may compute a different max-width
+       for it vs the columns container — this is what causes the
+       copyright bar to appear misaligned (wider or narrower).
+   Solution:
+     - Override col widths with explicit flex values that sum to 100%
+     - Kill the oversized padding-right on col-1
+     - Force footer-bt.container to match the inner container exactly
+       by setting the same max-width Bootstrap uses at that viewport
+*/
+
+/* 110% on 1280px screen → ~1163px viewport */
+@media (min-width: 1050px) and (max-width: 1199px) {
+  footer .footer-col-1 {
+    width: 40% !important;
+    max-width: 40% !important;
+    flex: 0 0 40% !important;
+    padding-right: 24px !important;
+    border-right: 1px solid #dddddd61 !important;
+  }
+  footer .footer-col-2 {
+    width: 32% !important;
+    max-width: 32% !important;
+    flex: 0 0 32% !important;
+    padding-left: 24px !important;
+  }
+  footer .footer-col-3 {
+    width: 28% !important;
+    max-width: 28% !important;
+    flex: 0 0 28% !important;
+    padding-left: 12px !important;
+  }
+  .footer-logo { width: 150px; max-width: 150px; }
+  footer .footer-links a { font-size: 14px; }
+  footer .enq a, footer a { font-size: 14px; }
+  footer p { font-size: 13px; }
+  footer h5 { font-size: 15px; }
+}
+
+/* 110% on 1366px screen → ~1242px viewport */
+@media (min-width: 1200px) and (max-width: 1310px) {
+  footer .footer-col-1 {
+    width: 40% !important;
+    max-width: 40% !important;
+    flex: 0 0 40% !important;
+    padding-right: 26px !important;
+    border-right: 1px solid #dddddd61 !important;
+  }
+  footer .footer-col-2 {
+    width: 32% !important;
+    max-width: 32% !important;
+    flex: 0 0 32% !important;
+    padding-left: 26px !important;
+  }
+  footer .footer-col-3 {
+    width: 28% !important;
+    max-width: 28% !important;
+    flex: 0 0 28% !important;
+    padding-left: 14px !important;
+  }
+  .footer-logo { width: 160px; max-width: 160px; }
+  footer .footer-links a { font-size: 15px; }
+  footer .enq a, footer a { font-size: 15px; }
+  footer p { font-size: 14px; }
+}
+
+/* 110% on 1920px screen → ~1745px viewport — no layout issue but reduce huge padding */
+@media (min-width: 1600px) {
+  footer .footer-col-1 {
+    padding-right: 60px !important;
+  }
+}
+
+
+/* ================================================================
+   14. FOOTER-BT STRUCTURAL FIX
+   footer-bt is now inside .container — remove any leftover
+   .container class overrides and ensure it stays full-width
+   within its parent container at every zoom level.
+   ================================================================ */
+footer .footer-bt {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  text-align: center !important;
+}
+
+
+@media (max-width: 1200px) {
+    .trust-1 .box .row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .trust-1 .box .col-4 {
+        margin-bottom: 20px;
+    }
+
+    .trust-1 .box .col-8 {
+        text-align: left;
+    }
+}
