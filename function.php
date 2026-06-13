@@ -1,33 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admission Form - Green Park International School</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Assets/CSS/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link rel="shortcut icon" href="Assets/Images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"
-        integrity="sha512-BdHyGtczsUoFcEma+MfXc71KJLv/cd+sUsUaYYf2mXpfG/PtBjNXsPo78+rxWjscxUYN2Qr2+DbeGGiJx81ifg=="
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="Assets/CSS/index-responsive.css">
-</head>
-
-<body>
-   <header id="header">
+function template_header(){
+    echo <<< EOT
+    <header id="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html"><img src="Assets/Images/Logo.webp"
+                <a class="navbar-brand" href="index.php"><img src="Assets/Images/Logo.webp"
                         alt="Green Park Internation School" class="logo-img"></a>
                 <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#mobileSidebar">
@@ -36,7 +14,7 @@
                 <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
+                            <a class="nav-link" href="index.php">Home</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -44,24 +22,25 @@
                                 About
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="about.html">About Us</a></li>
-                                <li><a class="dropdown-item" href="career.html">Career</a></li>
-                                <li><a class="dropdown-item" href="our-purpose.html">Our Purpose</a></li>
-                                <li><a class="dropdown-item" href="trust-management.html">Trust & Management</a></li>
-                                <li><a class="dropdown-item" href="correspondent-message.html">Correspondent Message</a>
+                                <li><a class="dropdown-item" href="about.php">About Us</a></li>
+                                <li><a class="dropdown-item" href="career.php">Career</a></li>
+                                <li><a class="dropdown-item" href="our-purpose.php">Our Purpose</a></li>
+                                <li><a class="dropdown-item" href="trust-management.php">Trust & Management</a></li>
+                                <li><a class="dropdown-item" href="correspondent-message.php">Correspondent Message</a>
                                 </li>
-                                <li><a class="dropdown-item" href="principal-message.html">Principal Message</a></li>
-                                <li><a class="dropdown-item" href="academic-co-ordinator.html">Academic Co-ordinator</a></li>
-                                <li><a class="dropdown-item" href="school-admin.html">School Admin</a></li>
-                                
-                                
+                                <li><a class="dropdown-item" href="principal-message.php">Principal Message</a></li>
+                                <li><a class="dropdown-item" href="academic-co-ordinator.php">Academic Co-ordinator</a>
+                                </li>
+                                <li><a class="dropdown-item" href="school-admin.php">School Admin</a></li>
+
+
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="academics.html">Academics</a>
+                            <a class="nav-link" href="academics.php">Academics</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="facilities.html">Facilities</a>
+                            <a class="nav-link" href="facilities.php">Facilities</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -69,15 +48,15 @@
                                 Admission
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="admission.html">Admission Procedure</a></li>
-                                <li><a class="dropdown-item" href="admission-form.html">Admission Form</a></li>
+                                <li><a class="dropdown-item" href="admission.php">Admission Procedure</a></li>
+                                <li><a class="dropdown-item" href="admission-form.php">Admission Form</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="gallery.html" class="nav-link">Gallery</a>
+                            <a href="gallery.php" class="nav-link">Gallery</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
+                            <a class="nav-link" href="contact.php">Contact</a>
                         </li>
                     </ul>
                     <div class="d-flex">
@@ -114,66 +93,67 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav">
 
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="correspondent-message.html">Correspondent Message</a></li>
-                    <li class="nav-item"><a class="nav-link" href="principal-message.html">Principal Message</a></li>
-                    <li class="nav-item"><a class="nav-link" href="academic-co-ordinator.html">Academic Co-ordinator Message</a></li>
-                    <li class="nav-item"><a class="nav-link" href="co-ordinator.html">Co-ordinator Message</a></li>
-                    <li class="nav-item"><a class="nav-link" href="school-admin.html">School Admin</a></li>
-                    <li class="nav-item"><a class="nav-link" href="academics.html">Academics</a></li>
-                    <li class="nav-item"><a class="nav-link" href="facilities.html">Facilities</a></li>
-                    <li class="nav-item"><a class="nav-link" href="admission.html">Admission</a></li>
-                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.php">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="correspondent-message.php">Correspondent Message</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="principal-message.php">Principal Message</a></li>
+                    <li class="nav-item"><a class="nav-link" href="academic-co-ordinator.php">Academic Co-ordinator
+                            Message</a></li>
+                    <li class="nav-item"><a class="nav-link" href="co-ordinator.php">Co-ordinator Message</a></li>
+                    <li class="nav-item"><a class="nav-link" href="school-admin.php">School Admin</a></li>
+                    <li class="nav-item"><a class="nav-link" href="academics.php">Academics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="facilities.php">Facilities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="admission.php">Admission</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.php">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
 
                 </ul>
             </div>
 
     </header>
-    <main>
-        <section class="form">
-            <iframe aria-label='ADMISSION FORM' frameborder="0" style="height:1900px;width:99%;border:none;" src='https://forms.zohopublic.in/jayapriyagroupofinstitutions1/form/ADMISSIONFORM/formperma/QSLIsYmuOPXNoCqw8HSEYvhl-4u5RDEYFVZfGuw0Db8' >
-</iframe>
-        </section>
-    </main>
-        <footer class="footer-section text-white pt-5 pb-4">
+    EOT;
+}
+
+function template_footer(){
+    echo <<< EOT
+    <footer class="footer-section text-white pt-5 pb-4">
         <div class="container">
             <div class="row">
- 
+
                 <!-- Column 1 (Logo + About) -->
                 <div class="col-lg-5 footer-col-1">
- 
+
                     <!-- Logo -->
                     <img src="Assets/Images/Footer-logo.webp" alt="logo" class="footer-logo mb-3">
- 
+
                     <p class="text-light">
                         Core teaching blends classroom learning, sports, extracurricular activities, social and cultural
                         events, ensuring holistic student growth, development, and overall progress
                     </p>
- 
- 
- 
+
+
+
                 </div>
- 
+
                 <!-- Column 2 (Quick Links) -->
                 <div class="col-lg-4 footer-col-2">
                     <h5 class="mb-3">Quick Links</h5>
- 
+
                     <ul class="list-unstyled footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="academics.html">Academics</a></li>
-                        <li><a href="facilities.html">Facilities</a></li>
-                        <li><a href="admission.html">Admission</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="about.php">About</a></li>
+                        <li><a href="academics.php">Academics</a></li>
+                        <li><a href="facilities.php">Facilities</a></li>
+                        <li><a href="admission.php">Admission</a></li>
+                        <li><a href="contact.php">Contact</a></li>
                     </ul>
                 </div>
- 
+
                 <!-- Column 3 (Text + Social) -->
                 <div class="col-lg-3 footer-col-3">
                     <h5 class="">Enquiries</h5>
- 
+
                     <p class="enq"><i class="bi bi-telephone me-2"></i><a href="tel:+91 9965501123"
                             class="text-white">+91 9965501123</a></p>
 
@@ -186,7 +166,7 @@
                     <h5 class="fw-bold mt-5 fu">
                         Follow us
                     </h5>
- 
+
                     <div class="social-icons mt-3">
                         <a href="https://www.facebook.com/greenparkedu" class="facebook">
                             <i class="bi bi-facebook"></i>
@@ -201,31 +181,15 @@
                             <i class="bi bi-telegram"></i>
                         </a>
                     </div>
- 
- 
+
+
                 </div>
- 
+
             </div>
             <div class="footer-bt text-white text-center">
                 <p>&copy; 2026 Green Park International School.</p>
             </div>
         </div>
     </footer>
-    <button id="scrollTopBtn" title="Go to top">
-        <i class="bi bi-arrow-up"></i>
-    </button>
-    <a href="https://wa.me/919965501123" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <script src="Assets/JS/script.js"></script>
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script src="Assets/JS/popmodel.js"></script>
-    <script src="Assets/JS/aos.js"></script>
-    <script src="Assets/JS/scrolltoup.js"></script>
-    <script src="Assets/JS/header-fix.js"></script>
-
-</body>
-
-</html>
+    EOT;
+}
